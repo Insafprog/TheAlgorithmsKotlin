@@ -39,8 +39,7 @@ object SortUtils {
      */
 
     fun<T> List<T>.printArray() {
-        stream()
-            .map { it.toString() }
+        map { it.toString() }
             .map { "$it " }
             .forEach { print(it) }
 
