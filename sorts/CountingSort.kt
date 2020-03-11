@@ -2,10 +2,8 @@ package sorts
 
 import sorts.SortUtils.printArray
 import java.util.*
-import java.util.function.Consumer
 import java.util.stream.Collectors
 import java.util.stream.IntStream
-import java.util.stream.Stream
 
 /**
  * Code idea from https://github.com/TheAlgorithms
