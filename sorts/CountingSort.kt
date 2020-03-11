@@ -39,28 +39,6 @@ object CountingSort : SortAlgorithm {
         return sortedArray
     }
 
-        /**
-         * Stream Counting Sort
-         * The same as method uses stream API
-         *
-         */
-    private fun <T : Comparable<T>?> List<T>.streamSort(): List<T> {
-        return stream()
-            .collect(
-                Collectors.toMap(
-                    { k: T -> k },
-                    { _: T -> 1 },
-                    { v1: Int, v2: Int -> v1 + v2 }
-                ) { TreeMap() }
-            )
-            .entries
-            .stream()
-            .flatMap { entry: Map.Entry<T, Int?> ->
-                IntStream.rangeClosed(1, entry.value!!)
-                    .mapToObj { entry.key }
-            }
-            .collect(Collectors.toList())
-    }
 
     // Driver Program
     @JvmStatic
@@ -74,8 +52,7 @@ object CountingSort : SortAlgorithm {
         // Output => 1 1 4 6 9 9 12 23 23 54 78 231
         println("After Sorting:")
         unsortedInts.sortAlgorithm().printArray()
-        println("After Sorting By Streams:")
-        unsortedInts.streamSort().printArray()
+
         println("\n------------------------------\n")
 
         // String Input
@@ -86,7 +63,5 @@ object CountingSort : SortAlgorithm {
         //Output => a a b c c d e f g
         println("After Sorting:")
         unsortedStrings.sortAlgorithm().printArray()
-        println("After Sorting By Streams:")
-        unsortedStrings.streamSort().printArray()
     }
 }
