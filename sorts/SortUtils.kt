@@ -31,7 +31,9 @@ object SortUtils {
      * @return true if the first element is less then the second element
      */
 
-    fun <T: Comparable<T>> T.less(second: T) = this < second
+    fun <T: Comparable<T>> T.less(second: T): Boolean {
+        return this < second
+    }
 
     /**
      * Just print list

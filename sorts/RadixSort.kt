@@ -58,7 +58,7 @@ object RadixSort {
         return this
     }
 
-    fun IntArray.print() {
+    fun IntArray.printArray() {
         forEach { print("$it ") }
         println()
     }
@@ -66,6 +66,6 @@ object RadixSort {
     @JvmStatic
     fun main(args: Array<String>) {
         val arr = intArrayOf(170, 45, 75, 90, 802, 24, 2, 66)
-        arr.radixsort().print()
+        arr.radixsort().printArray()
     }
 }

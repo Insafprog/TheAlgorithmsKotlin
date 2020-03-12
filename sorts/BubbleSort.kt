@@ -17,7 +17,6 @@ object BubbleSort: SortAlgorithm {
      * @author Varun Upadhyay (https://github.com/varunu28)
      * @author Podshivalov Nikita (https://github.com/nikitap492)
      * @author Bakirov Insaf (https://github.com/Insafprog)
-     * @param array The array to be sorted
      * Sorts the array in increasing order
      */
     override fun <T : Comparable<T>> Array<T>.sortAlgorithm(): Array<T> {

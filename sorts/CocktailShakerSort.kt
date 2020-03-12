@@ -16,7 +16,6 @@ object CocktailShakerSort : SortAlgorithm {
     /**
      * This method implements the Generic Cocktail Shaker Sort
      *
-     * @param array The array to be sorted
      * Sorts the array in increasing order
      */
     override fun <T : Comparable<T>> Array<T>.sortAlgorithm(): Array<T> {
