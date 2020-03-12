@@ -51,7 +51,7 @@ object SortUtils {
      *
      */
 
-    fun <T> Array<T>.printArray() = println(contentToString())
+    fun <T> Array<T>.printArray() = toList().printArray()
 
     /**
      * Swaps all position from {@param left} to @{@param right} for {@param array}

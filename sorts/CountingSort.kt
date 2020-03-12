@@ -12,6 +12,7 @@ import java.util.stream.IntStream
  * @author Bakirov Insaf (https://github.com/Insafprog)
  */
 object CountingSort : SortAlgorithm {
+    @Suppress("UNCHECKED_CAST")
     override fun <T : Comparable<T>> Array<T>.sortAlgorithm(): Array<T> {
         return arrayOf<Any>(toList().sortAlgorithm()) as Array<T>
     }

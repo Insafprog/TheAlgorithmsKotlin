@@ -21,11 +21,10 @@ interface SortAlgorithm {
     /**
      * Auxiliary method for algorithms what wanted to work with lists from JCF
      *
-     * @param unsorted - a list should be sorted
      * @return a sorted list
      */
 
-    @Suppress("UNCHECKED")
+    @Suppress("UNCHECKED_CAST")
     fun <T: Comparable<T>> List<T>.sortAlgorithm(): List<T> {
         val array = arrayOf<Any>(this) as Array<T>
         return array.sortAlgorithm().toList()
