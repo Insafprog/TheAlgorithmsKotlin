@@ -3,6 +3,13 @@ package sorts
 import sorts.SortUtils.printArray
 import sorts.SortUtils.swap
 
+/**
+ * @author Bakirov Insaf (https://github.com/Insafprog)
+ * Code idea from https://github.com/TheAlgorithms
+ *
+ * Python program for Bitonic Sort. Note that this program
+ */
+
 object BitonicSort: SortAlgorithm {
     override fun <T: Comparable<T>> Array<T>.sortAlgorithm(): Array<T> {
         val low = 0
@@ -10,6 +17,12 @@ object BitonicSort: SortAlgorithm {
         bitonicSort(low, size, up)
         return this
     }
+
+    /*
+    This function first produces a bitonic sequence by recursively
+    sorting its two halves in opposite sorting orders, and then
+    calls bitonicMerge to make them in the same order
+    */
 
     private fun <T: Comparable<T>> Array<T>.bitonicSort(low: Int, cnt: Int, dire: Int) {
         if (cnt > 1) {
@@ -19,6 +32,13 @@ object BitonicSort: SortAlgorithm {
             bitonicMerge(low, cnt, dire)
         }
     }
+
+    /*
+    It recursively sorts a bitonic sequence in ascending order,
+    if dire = 1, and in descending order otherwise (means dire = 0).
+    The sequence to be sorted starts at index position low,
+    the parameter cnt is the number of elements to be sorted.
+    */
 
     private fun <T: Comparable<T>> Array<T>.bitonicMerge(low: Int, cnt: Int, dire: Int) {
         if (cnt > 1) {
@@ -31,10 +51,17 @@ object BitonicSort: SortAlgorithm {
         }
     }
 
-    private fun <T: Comparable<T>> Array<T>.compAndSwap(i: Int, j: Int, up: Int) {
-        if ((up == 1 && this[i] > this[j]) || (up == 0 && this[i] < this[j] ))
+    /*
+    The parameter dir indicates the sorting direction, ASCENDING
+    or DESCENDING; if (a[i] > a[j]) agrees with the direction,
+    then a[i] and a[j] are interchanged.
+    */
+
+    private fun <T: Comparable<T>> Array<T>.compAndSwap(i: Int, j: Int, dire: Int) {
+        if ((dire == 1 && this[i] > this[j]) || (dire == 0 && this[i] < this[j] ))
             swap(i, j)
     }
+
     @JvmStatic
     fun main(args: Array<String>) {
         // Integer Input
